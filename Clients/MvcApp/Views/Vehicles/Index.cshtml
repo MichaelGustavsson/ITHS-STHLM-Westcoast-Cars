@@ -7,12 +7,16 @@
 <h1>@ViewData["Title"]</h1>
 
 <article>
-    <section>        
+    <section class="gallery-wrapper">        
         @foreach (var vehicle in Model!)
         {
-            <div>
-                <a asp-action="Details">@vehicle.VehicleName</a>
-                <p>@vehicle.ModelYear @vehicle.Mileage</p>
+            <div class="gallery-card">
+                <h4>@vehicle.VehicleName</h4>
+                @* <a asp-action="Details">@vehicle.VehicleName</a> *@
+                <a href="#">
+                    <img src="@vehicle.ImageUrl" alt="@vehicle.VehicleName" width="400">
+                </a>
+                <p>Årsmodell @vehicle.ModelYear | Antal km @vehicle.Mileage</p>
             </div>
         }
     </section>
