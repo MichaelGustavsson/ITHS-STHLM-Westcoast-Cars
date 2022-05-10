@@ -29,11 +29,5 @@ namespace MvcApp.Controllers
       }
 
     }
-
-    [HttpGet("{id}")]
-    public IActionResult Details(int id)
-    {
-      return View("Details");
-    }
   }
 }

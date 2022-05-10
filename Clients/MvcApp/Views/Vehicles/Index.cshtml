@@ -1,23 +1,36 @@
 @model IEnumerable<MvcApp.ViewModels.VehicleViewModel>
 
+@section styles{
+    <link rel="stylesheet" href="~/css/gallery-page.css">
+}
+
 @{
     ViewData["Title"] = "Våra aktuella bilar i lager";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="page-title">@ViewData["Title"]</h1>
 
 <article>
     <section class="gallery-wrapper">        
         @foreach (var vehicle in Model!)
         {
             <div class="gallery-card">
-                <h4>@vehicle.VehicleName</h4>
-                @* <a asp-action="Details">@vehicle.VehicleName</a> *@
+                <h4>@vehicle.VehicleName</h4>                
                 <a href="#">
-                    <img src="@vehicle.ImageUrl" alt="@vehicle.VehicleName" width="400">
+                    <img src="@vehicle.ImageUrl" alt="@vehicle.VehicleName" vehicleId="@vehicle.VehicleId" width="200">
                 </a>
                 <p>Årsmodell @vehicle.ModelYear | Antal km @vehicle.Mileage</p>
             </div>
         }
     </section>
 </article>
+
+<div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <div class="modal-container"></div>
+</div>
+<div class="overlay hidden"></div>
+
+@section scripts{
+    <script src="~/js/gallery-page.js"></script>
+}
