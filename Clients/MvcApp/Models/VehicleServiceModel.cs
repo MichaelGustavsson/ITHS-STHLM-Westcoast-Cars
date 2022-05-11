@@ -60,5 +60,23 @@ namespace MvcApp.Models
 
       return vehicle ?? new VehicleViewModel();
     }
+
+    public async Task<bool> CreateVehicle(CreateVehicleViewModel vehicle)
+    {
+      using var http = new HttpClient();
+      var baseUrl = _config.GetValue<string>("baseUrl");
+      var url = $"{baseUrl}/vehicles";
+
+      var response = await http.PostAsJsonAsync(url, vehicle);
+
+      if (!response.IsSuccessStatusCode)
+      {
+        string reason = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(reason);
+        return false;
+      }
+
+      return true;
+    }
   }
 }

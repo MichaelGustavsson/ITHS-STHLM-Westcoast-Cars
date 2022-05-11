@@ -8,9 +8,12 @@ namespace MvcApp.Controllers
   public class VehiclesController : Controller
   {
     private readonly IConfiguration _config;
+    private readonly VehicleServiceModel _vehicleService;
+
     public VehiclesController(IConfiguration config)
     {
       _config = config;
+      _vehicleService = new VehicleServiceModel(_config);
     }
 
     [HttpGet()]
@@ -18,9 +21,9 @@ namespace MvcApp.Controllers
     {
       try
       {
-        var vehicleService = new VehicleServiceModel(_config);
+        // var vehicleService = new VehicleServiceModel(_config);
 
-        var vehicles = await vehicleService.ListAllVehicles();
+        var vehicles = await _vehicleService.ListAllVehicles();
         return View("Index", vehicles);
       }
       catch (System.Exception)
@@ -52,7 +55,15 @@ namespace MvcApp.Controllers
         return View("Create", vehicle);
       }
 
-      return View("Create");
+      //Måste vi anropa vårt API för att spara bilen...
+      // var vehicleService = new VehicleServiceModel(_config);
+
+      if (await _vehicleService.CreateVehicle(vehicle))
+      {
+        return View("Confirmation");
+      }
+
+      return View("Create", vehicle);
     }
 
     [HttpGet("Details/{id}")]
@@ -61,8 +72,8 @@ namespace MvcApp.Controllers
       try
       {
         // Hämta den specika bilen ifrån vårt API...
-        var vehicleService = new VehicleServiceModel(_config);
-        var vehicle = await vehicleService.FindVehicle(id);
+        // var vehicleService = new VehicleServiceModel(_config);
+        var vehicle = await _vehicleService.FindVehicle(id);
         return View("Details", vehicle);
       }
       catch (Exception ex)

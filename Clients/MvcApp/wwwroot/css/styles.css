@@ -28,16 +28,17 @@ h2 {
 
 input,
 textarea {
-  border: #888 solid 1px;
+  border: var(--border-color) solid 1px;
   padding: 0.3rem 0.4rem;
   border-radius: 5px;
+  outline: none !important;
 }
 
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
+  background: var(--secondary-color);
   opacity: 0.9;
   position: fixed;
   top: 0;
@@ -69,7 +70,7 @@ textarea {
 
 .page-title {
   text-align: center;
-  color: cadetblue;
+  color: #5f9ea0;
   padding: 2rem 0 3rem 0;
 }
 
@@ -82,9 +83,18 @@ textarea {
   background: #333;
   color: #f4f4f4;
   padding: 0.4rem 2rem;
+  cursor: pointer;
   text-decoration: none;
   font-size: 0.8rem;
   margin-top: 0.3rem;
+  border: none;
+  outline: none !important;
+}
+
+.btn:hover {
+  background: #888;
+  color: #333;
+  font-weight: bold;
 }
 
 .go-back {
