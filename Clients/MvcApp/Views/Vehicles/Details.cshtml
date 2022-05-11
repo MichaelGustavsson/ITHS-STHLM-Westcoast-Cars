@@ -1,0 +1,19 @@
+@model MvcApp.ViewModels.VehicleViewModel
+
+@section styles{
+  <link rel="stylesheet" href="~/css/vehicle-detail-page.css">
+}
+
+<article class="vehicle-detail">
+  <h1 class="page-title">@Model!.VehicleName</h1>
+  <img src="@Model.ImageUrl" alt="@Model.VehicleName">
+  <section class="vehicle-description">
+    <div>Årsmodell @Model.ModelYear</div>
+    <div>Antal km @Model.Mileage</div>
+    <h2>Pris @Model.Value</h2>
+    <hr>
+    <h4>Beskrivning</h4>
+    <p>@Model.Description</p>
+    <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Tillbaka till våra bilar</a>
+  </section>
+</article>

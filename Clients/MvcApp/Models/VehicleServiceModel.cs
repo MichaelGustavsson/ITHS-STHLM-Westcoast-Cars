@@ -42,5 +42,23 @@ namespace MvcApp.Models
 
       return vehicles ?? new List<VehicleViewModel>();
     }
+
+    public async Task<VehicleViewModel> FindVehicle(int id)
+    {
+      var baseUrl = _config.GetValue<string>("baseUrl");
+      var url = $"{baseUrl}/vehicles/{id}";
+
+      using var http = new HttpClient();
+      var response = await http.GetAsync(url);
+
+      if (!response.IsSuccessStatusCode)
+      {
+        Console.WriteLine("Det gick inte att hitta bilen");
+      }
+
+      var vehicle = await response.Content.ReadFromJsonAsync<VehicleViewModel>();
+
+      return vehicle ?? new VehicleViewModel();
+    }
   }
 }

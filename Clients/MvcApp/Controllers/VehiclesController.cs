@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MvcApp.Models;
+using MvcApp.ViewModels;
 
 namespace MvcApp.Controllers
 {
@@ -27,7 +28,29 @@ namespace MvcApp.Controllers
 
         throw;
       }
+    }
 
+    [HttpGet("Details/{id}")]
+    public async Task<IActionResult> Details(int id)
+    {
+      try
+      {
+        // Hämta den specika bilen ifrån vårt API...
+        var vehicleService = new VehicleServiceModel(_config);
+        var vehicle = await vehicleService.FindVehicle(id);
+        return View("Details", vehicle);
+      }
+      catch (Exception ex)
+      {
+        //Vi bör returnera en felsida med information
+        //Return View("Error", errorObject);
+        //Eller skapa en ViewBag t ex ViewBag.ErrorMessage = ???
+        //Returnera vyn Details och titta på om ErrorMessage innehåller någon information
+        //Glöm inte att kontrollera så att ErrorMessage egenskapen existerar på ViewBag objektet...
+        Console.WriteLine(ex.Message);
+        return View("Error");
+      }
     }
   }
+
 }

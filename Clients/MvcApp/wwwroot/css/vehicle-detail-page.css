@@ -1,0 +1,29 @@
+.vehicle-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.vehicle-detail img {
+  border: #888 solid 1px;
+  padding: 0.6rem;
+  width: 100%;
+}
+
+.vehicle-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-description h2 {
+  padding: 1rem 0;
+}
+
+.vehicle-description hr {
+  margin: 1rem 0 2rem 0;
+}
+
+.vehicle-description h4 {
+  margin: 0 0 0.8rem 0;
+}

@@ -59,6 +59,12 @@ h2 {
   font-weight: 400;
 }
 
+.page-title {
+  text-align: center;
+  color: cadetblue;
+  padding: 2rem 0 3rem 0;
+}
+
 .text-primary {
   color: cadetblue;
 }
@@ -71,4 +77,11 @@ h2 {
   text-decoration: none;
   font-size: 0.8rem;
   margin-top: 0.3rem;
+}
+
+.go-back {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: cadetblue;
+  margin: 2rem 0;
 }

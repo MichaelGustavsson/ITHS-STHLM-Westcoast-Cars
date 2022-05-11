@@ -13,17 +13,20 @@ const loadImages = () => {
 
   //Loopa igenom alla bilder och knyt en klick händelse på varje bild...
   images.forEach((image) => {
+    let baseUrl = image.baseURI.endsWith('#')
+      ? image.baseURI.slice(0, -1)
+      : image.baseURI;
+
     let src = image.getAttribute('src');
     let id = image.getAttribute('vehicleId');
+    let url = `${baseUrl}/Details/${id}`;
     image.addEventListener('click', () => {
-      openModal(src, id);
+      openModal(src, url);
     });
   });
 };
 
-const openModal = (imageSrc, vehicleId) => {
-  console.log(`Bilens id är ${vehicleId}`);
-  let url = `https://localhost:7311/vehicles/details/${vehicleId}`;
+const openModal = (imageSrc, url) => {
   const placeholder = modalDialog.querySelector('.modal-container');
   placeholder.innerHTML = `<img src="${imageSrc}" alt="En bil"/>
   <a class="btn" href="${url}">Mer Info</a>`;
