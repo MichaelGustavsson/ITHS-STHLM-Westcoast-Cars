@@ -1,0 +1,42 @@
+@model MvcApp.ViewModels.CreateVehicleViewModel
+
+<h1 class="page-title">Lägg till ett nytt fordon</h1>
+<section class="form-container">
+  <h4>Fordons information</h4>
+  <form class="form" asp-action="Create" method="post">
+    <div class="form-control">
+      <label asp-for="@Model!.RegNo"></label>
+      <input asp-for="@Model!.RegNo" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.Make"></label>
+      <input asp-for="@Model!.Make" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.Model"></label>
+      <input asp-for="@Model!.Model" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.ModelYear"></label>
+      <input asp-for="@Model!.ModelYear" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.Mileage"></label>
+      <input asp-for="@Model!.Mileage" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.ImageUrl"></label>
+      <input asp-for="@Model!.ImageUrl" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.Value"></label>
+      <input asp-for="@Model!.Value" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.Description"></label>
+      <textarea asp-for="@Model!.Description"></textarea>      
+    </div>
+
+    <button type="submit" class="btn">Spara</button>
+  </form>
+</section>

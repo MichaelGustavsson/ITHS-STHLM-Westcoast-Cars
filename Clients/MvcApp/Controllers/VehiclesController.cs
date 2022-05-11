@@ -30,6 +30,31 @@ namespace MvcApp.Controllers
       }
     }
 
+    // Create metod för HttpGet har som syfte att skapa ett objekt
+    // Som vi skickar till en vy som skall presentera ett inmatningsformulär...
+    [HttpGet("Create")]
+    public IActionResult Create()
+    {
+      // Här måste vi skapa en instans av vy modellen CreateViewModel
+      var vehicle = new CreateVehicleViewModel();
+      return View("Create", vehicle);
+    }
+
+    // Fungera som mottagare av formulärets data
+    [HttpPost("Create")]
+    public async Task<IActionResult> Create(CreateVehicleViewModel vehicle)
+    {
+      // Här kommer vi att kontakta vårt API och spara ner bilen i databasen.
+
+      //Kontrollera så att allt data är medskickat är med...
+      if (!ModelState.IsValid)
+      {
+        return View("Create", vehicle);
+      }
+
+      return View("Create");
+    }
+
     [HttpGet("Details/{id}")]
     public async Task<IActionResult> Details(int id)
     {
