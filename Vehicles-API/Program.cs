@@ -65,6 +65,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Regler för vilka avsändare som får lov att komma in hos oss...
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("WestcoastCors",
+    policy =>
+    {
+      policy.WithOrigins("http://127.0.0.1:5500");
+    }
+  );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -75,6 +86,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("WestcoastCors");
 
 app.UseAuthorization();
 

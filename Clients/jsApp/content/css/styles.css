@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,900&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  padding: 5rem 2rem;
+}
+
+h1 {
+  color: #f4f4f4;
+  font-size: xx-large;
+  font-style: italic;
+}
+
+h2 {
+  padding: 0 0 1.1rem 0;
+}
+
+input,
+textarea {
+  border: var(--border-color) solid 1px;
+  padding: 0.3rem 0.4rem;
+  border-radius: 5px;
+  outline: none !important;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color);
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5rem;
+  padding: 0 2rem;
+  z-index: 2;
+}
+
+#navbar a {
+  color: #f4f4f4;
+  padding: 0.8rem 0.5rem;
+  margin-right: 0.4rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+#navbar .logo {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.page-title {
+  text-align: center;
+  color: #5f9ea0;
+  padding: 2rem 0 3rem 0;
+}
+
+.text-primary {
+  color: cadetblue;
+}
+
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #f4f4f4;
+  padding: 0.4rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  border: none;
+  outline: none !important;
+}
+
+.btn:hover {
+  background: #888;
+  color: #333;
+  font-weight: bold;
+}
+
+.go-back {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: cadetblue;
+  margin: 2rem 0;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  border: #888 solid 1px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.6);
+}
+
+.form-container h4 {
+  background: cadetblue;
+  color: #f4f4f4;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.form-control {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control input,
+textarea {
+  width: 250px;
+}

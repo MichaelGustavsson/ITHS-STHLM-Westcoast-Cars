@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/cbd941066d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./content/css/utilities.css" />
+    <link rel="stylesheet" href="./content/css/styles.css" />
+    <link rel="stylesheet" href="./content/css/gallery-page.css" />
+    <title>Våra bilar</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1 class="logo">
+        <span class="text-primary"><i class="fas fa-car"></i> Westcoast</span>
+        Cars
+      </h1>
+      <ul>
+        <li><a href="">Start</a></li>
+        <li><a href="">Våra bilar</a></li>
+        <li><a href="">Service</a></li>
+        <li><a href="">Om Oss</a></li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <h1 class="page-title">Här är våra bilar i lager</h1>
+      </header>
+
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <div class="modal-container"></div>
+      </div>
+
+      <div class="alert"></div>
+      <section class="gallery-wrapper"></section>
+    </main>
+    <div class="overlay hidden"></div>
+
+    <!--- Placera javascript filer här nedan -->
+    <script src="./content/scripts/gallery.js"></script>
+  </body>
+</html>
