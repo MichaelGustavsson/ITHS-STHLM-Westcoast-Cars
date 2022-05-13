@@ -3,12 +3,20 @@
 /* Hämta html element som objekt */
 const pageTitle = document.querySelector('.page-title');
 const vehicleImage = document.querySelector('#vehicleImage');
+const modelYear = document.querySelector('#modelYear');
+const mileage = document.querySelector('#mileage');
+const value = document.querySelector('#value');
+const description = document.querySelector('#description');
 
 const baseUrl = 'https://localhost:7237/api/v1/vehicles';
 
 const createHtml = (vehicle) => {
   pageTitle.innerHTML = vehicle.vehicleName;
   vehicleImage.setAttribute('src', vehicle.imageUrl);
+  modelYear.innerHTML = `Årsmodell ${vehicle.modelYear}`;
+  mileage.innerHTML = `Antal Km ${vehicle.mileage}`;
+  value.innerHTML = `Pris ${vehicle.value}`;
+  description.innerHTML = vehicle.description;
 };
 
 const pageLoad = async () => {
@@ -27,7 +35,6 @@ const pageLoad = async () => {
 
 const getVehicle = async (vehicleId) => {
   const url = `${baseUrl}/${vehicleId}`;
-  console.log(url);
 
   const response = await fetch(url);
 

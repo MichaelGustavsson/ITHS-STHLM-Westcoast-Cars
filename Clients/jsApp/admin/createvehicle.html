@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/cbd941066d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../content/css/utilities.css" />
+    <link rel="stylesheet" href="../content/css/styles.css" />
+    <title>Lägg till bil</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1 class="logo">
+        <span class="text-primary"><i class="fas fa-car"></i> Westcoast</span>
+        Cars
+      </h1>
+      <ul>
+        <li><a href="../index.html">Start</a></li>
+        <li><a href="../gallery.html">Våra bilar</a></li>
+        <li><a href="../service.html">Service</a></li>
+        <li><a href="../about-us.html">Om Oss</a></li>
+        <li>
+          <a class="active" href="./admin/createvehicle.html" title="admin"
+            ><i class="fa-solid fa-gear"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <h1 class="page-title">Lägg till ny bil</h1>
+      </header>
+      <div class="alert hidden"></div>
+      <section class="form-container">
+        <h4>Fordons information</h4>
+        <form class="form" method="post">
+          <div class="form-control">
+            <label for="regNo">Registreringsnummer</label>
+            <input type="text" name="regNo" id="regNo" />
+          </div>
+          <div class="form-control">
+            <label for="make">Tillverkare</label>
+            <input type="text" name="make" id="make" />
+          </div>
+          <div class="form-control">
+            <label for="model">Modell</label>
+            <input type="text" name="model" id="model" />
+          </div>
+          <div class="form-control">
+            <label for="modelYear">Årsmodell</label>
+            <input type="text" name="modelYear" id="modelYear" />
+          </div>
+          <div class="form-control">
+            <label for="mileage">Antal Km</label>
+            <input type="text" name="mileage" id="mileage" />
+          </div>
+          <div class="form-control">
+            <label for="imageUrl">Bild</label>
+            <input type="text" name="imageUrl" id="imageUrl" />
+          </div>
+          <div class="form-control">
+            <label for="value">Pris</label>
+            <input type="text" name="value" id="value" />
+          </div>
+          <div class="form-control">
+            <label for="description">Beskrivning</label>
+            <input type="text" name="description" id="description" />
+          </div>
+          <button id="save" type="submit" class="btn">Spara</button>
+        </form>
+      </section>
+    </main>
+    <script src="../content/scripts/create-vehicle.js"></script>
+  </body>
+</html>

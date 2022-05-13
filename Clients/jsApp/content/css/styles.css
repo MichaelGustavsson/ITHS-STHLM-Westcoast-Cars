@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,900&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
 /* Reset */
 * {
@@ -61,6 +61,11 @@ textarea {
   display: flex;
   flex-direction: row;
   list-style: none;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.active {
+  border-bottom: #2196f3 solid 2px;
 }
 
 #navbar .logo {
@@ -137,4 +142,27 @@ textarea {
 .form-control input,
 textarea {
   width: 250px;
+}
+
+.hidden {
+  display: none;
+}
+
+.alert {
+  margin: auto;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border: var(--border-color) solid 1px;
+  border-radius: 5px;
+  background-color: #fff;
+  max-width: 600px;
+}
+
+.alert-error {
+  background-color: var(--alert-error-color);
+}
+
+.alert-success {
+  background-color: #689e68;
+  color: var(--light-text-color);
 }

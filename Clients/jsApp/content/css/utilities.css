@@ -5,5 +5,8 @@
   --secondary-color: #333;
   --primary-text-color: #333;
   --secondary-text-color: #5f9ea0;
-  --border-color: #0000ff;
+  --light-text-color: #f4f4f4;
+  --border-color: #888;
+  --alert-error-color: #f29898;
+  --alert-success-color: #689e68;
 }

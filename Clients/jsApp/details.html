@@ -14,22 +14,43 @@
     <title>Information om bilen</title>
   </head>
   <body>
-    <article class="vehicle-detail">
-      <h1 class="page-title"></h1>
-      <img id="vehicleImage" src="" alt="" />
-      <section class="vehicle-description">
-        <div>Årsmodell</div>
-        <div>Antal km</div>
-        <h2>Pris</h2>
-        <hr />
-        <h4>Beskrivning</h4>
-        <p></p>
-        <a class="go-back"
-          ><i class="fa-solid fa-left-long"></i>Tillbaka till våra bilar</a
-        >
-      </section>
-    </article>
-
+    <nav id="navbar">
+      <h1 class="logo">
+        <span class="text-primary"><i class="fas fa-car"></i> Westcoast</span>
+        Cars
+      </h1>
+      <ul>
+        <li><a href="./index.html">Start</a></li>
+        <li><a class="active" href="./gallery.html">Våra bilar</a></li>
+        <li><a href="./service.html">Service</a></li>
+        <li><a href="./about-us.html">Om Oss</a></li>
+        <li>
+          <a href="./admin/createvehicle.html" title="admin"
+            ><i class="fa-solid fa-gear"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <h1 class="page-title"></h1>
+      </header>
+      <article class="vehicle-detail">
+        <img id="vehicleImage" src="" alt="" />
+        <section class="vehicle-description">
+          <div id="modelYear">Årsmodell</div>
+          <div id="mileage">Antal km</div>
+          <h2 id="value">Pris</h2>
+          <hr />
+          <h4>Beskrivning</h4>
+          <p id="description"></p>
+          <a class="go-back" href="./gallery.html">
+            <i class="fa-solid fa-left-long"></i>
+            Tillbaka till våra bilar
+          </a>
+        </section>
+      </article>
+    </main>
     <script src="./content/scripts/vehicle-details.js"></script>
   </body>
 </html>

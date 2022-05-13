@@ -92,7 +92,12 @@ namespace Vehicles_API.Controllers
         {
           // Om vi hamnar här så existerar bilen/fordonet redan i systemet.
           // Så vi returnerar ett 400 BadRequest meddelande.
-          return BadRequest($"Registreringsnummer {model.RegNo} finns redan i systemet");
+          var error = new ErrorViewModel{
+            StatusCode = 400,
+            StatusText = $"Registreringsnummer {model.RegNo} finns redan i systemet"
+          };
+          
+          return BadRequest(error);
         }
 
         // Annars anropa metoden AddVehicleAsync i vårt repository och lägg till bilen/fordonet i EntityFrameworkCore's ChangeTracking.

@@ -19,14 +19,14 @@
 }
 .gallery-card img {
   width: 100%;
+  cursor: pointer;
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  max-width: 40rem;
-  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
   background: #f3f3f3;
   border: #888 solid 1px;
@@ -54,12 +54,8 @@
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
-}
-
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
