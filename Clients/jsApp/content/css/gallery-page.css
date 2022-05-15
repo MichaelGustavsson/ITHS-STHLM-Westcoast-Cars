@@ -29,7 +29,7 @@
   max-width: 600px;
   border-radius: 10px;
   background: #f3f3f3;
-  border: #888 solid 1px;
+  border: var(--border-color) solid 1px;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.6);
   transform: translate(-50%, -50%);
   z-index: 1;

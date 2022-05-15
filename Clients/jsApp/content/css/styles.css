@@ -83,23 +83,38 @@ textarea {
   color: cadetblue;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 0 0;
+}
+
 .btn {
   display: inline-block;
   background: #333;
   color: #f4f4f4;
-  padding: 0.4rem 2rem;
+  padding: 0.7rem 2rem;
   cursor: pointer;
   text-decoration: none;
+  width: 200px;
+  max-width: 300px;
   font-size: 0.8rem;
   margin-top: 0.3rem;
   border: none;
   outline: none !important;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.6);
 }
 
 .btn:hover {
-  background: #888;
-  color: #333;
+  /* background: #888; */
   font-weight: bold;
+  box-shadow: 0 0 0 0;
+}
+
+.btn-disabled {
+  background: var(--border-color);
+  color: var(--primary-text-color);
+  box-shadow: 0 0 0 0;
 }
 
 .go-back {
@@ -124,24 +139,42 @@ textarea {
   text-align: center;
 }
 
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   gap: 0.6rem;
-  width: 100%;
 }
 
 .form-control {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .form-control input,
 textarea {
   width: 250px;
+}
+
+input[class='required'] {
+  border-right: red solid 5px;
+}
+
+.state-dirty {
+  border-right: blue solid 5px;
+}
+
+.state-error {
+  border-right: red solid 5px;
 }
 
 .hidden {

@@ -82,11 +82,11 @@ textarea {
   display: inline-block;
   background: #333;
   color: #f4f4f4;
-  padding: 0.4rem 2rem;
+  padding: 0.7rem 2rem;
   cursor: pointer;
   text-decoration: none;
   font-size: 0.8rem;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
   border: none;
   outline: none !important;
 }
