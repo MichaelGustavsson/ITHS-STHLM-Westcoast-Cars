@@ -101,6 +101,9 @@ namespace Vehicles_API.Repositories
       vehicle.Model = model.Model;
       vehicle.ModelYear = model.ModelYear;
       vehicle.Mileage = model.Mileage;
+      vehicle.Value = model.Value;
+      vehicle.Description = model.Description;
+      vehicle.ImageUrl = model.ImageUrl;
 
       _context.Vehicles.Update(vehicle);
     }

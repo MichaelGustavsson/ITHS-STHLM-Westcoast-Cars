@@ -1,0 +1,54 @@
+@page
+@model razorApp.Pages.Administration.UpdateVehicle
+@{
+    ViewData["Title"] = "Uppdatera bil";
+}
+
+<header>
+    <h1 class="page-title">Lägg till ny bil</h1>
+</header>
+<section class="form-container">
+    <h4>Fordons information</h4>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <input type="hidden" asp-for="VehicleModel.VehicleId">
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.RegNo"></label>
+                <input asp-for="VehicleModel.RegNo" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.Make"></label>
+                <input asp-for="VehicleModel.Make" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.Model"></label>
+                <input asp-for="VehicleModel.Model" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.ModelYear"></label>
+                <input asp-for="VehicleModel.ModelYear" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.Mileage"></label>
+                <input asp-for="VehicleModel.Mileage" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.ImageUrl"></label>
+                <input asp-for="VehicleModel.ImageUrl" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.Value"></label>
+                <input asp-for="VehicleModel.Value" />
+            </div>
+            <div class="form-control">
+                <label asp-for="VehicleModel.Description"></label>
+                <input asp-for="VehicleModel.Description" />
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>

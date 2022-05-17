@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Administration/CreateVehicle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5pc3RyYXRpb24vQ3JlYXRlVmVoaWNsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Administration/UpdateVehicle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5pc3RyYXRpb24vVXBkYXRlVmVoaWNsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

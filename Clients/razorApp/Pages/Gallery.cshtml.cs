@@ -17,7 +17,7 @@ namespace razorApp.Pages
       _logger = logger;
     }
 
-    public async Task OnGet()
+    public async Task OnGetAsync()
     {
       var baseUrl = _config.GetValue<string>("baseUrl");
       var url = $"{baseUrl}/vehicles/list";

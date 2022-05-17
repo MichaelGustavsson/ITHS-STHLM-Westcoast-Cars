@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Administration/UpdateVehicle.cshtml",
+      "TargetPath": "Pages\\Administration\\UpdateVehicle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Privacy.cshtml",
       "TargetPath": "Pages\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -16335,6 +16340,11 @@
     {
       "FilePath": "/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Gallery.cshtml",
       "TargetPath": "Pages\\Gallery.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/michaelgustavsson/Documents/Dev/Courses/ITHS-STHLM/Webbutveckling-CSharp/code/Westcoast-Cars/Clients/razorApp/Pages/Administration/CreateVehicle.cshtml",
+      "TargetPath": "Pages\\Administration\\CreateVehicle.cshtml",
       "FileKind": "mvc"
     }
   ],
