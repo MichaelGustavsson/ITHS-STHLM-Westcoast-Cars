@@ -118,7 +118,11 @@ namespace Vehicles_API.Controllers
         // Om vi hamnar här så betyder det att ett fel har inträffat
         // som inte är hanterat nedåt i anropskedjan(stacken).
         // Därför returnerar vi ett server fel(500 Internal Server Error).
-        return StatusCode(500, ex.Message);
+        var error = new ErrorViewModel{
+            StatusCode = 500,
+            StatusText = ex.Message
+          };
+        return StatusCode(500, error);
       }
     }
 
