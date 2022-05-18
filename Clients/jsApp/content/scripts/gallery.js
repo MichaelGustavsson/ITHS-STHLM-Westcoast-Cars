@@ -11,68 +11,68 @@ const overlay = document.querySelector('.overlay');
 const baseUrl = 'https://localhost:7237/api/v1/vehicles';
 
 const createHtml = (vehicle) => {
-  gallery.insertAdjacentHTML(
-    'beforeend',
-    `<div class="gallery-card">
+    gallery.insertAdjacentHTML(
+        'beforeend',
+        `<div class="gallery-card">
     <h4>${vehicle.vehicleName}</h4>
     <img src="${vehicle.imageUrl}" id="${vehicle.vehicleId}" width="400"/>
     <p>Årsmodell ${vehicle.modelYear} | Antal Km ${vehicle.mileage}</p> 
     
   </div>`
-  );
+    );
 };
 
 const loadImages = () => {
-  const images = document.querySelectorAll('.gallery-card img');
-  images.forEach((image) => {
-    let appUrl = image.baseURI.endsWith('#')
-      ? image.baseURI.slice(0, -1)
-      : image.baseURI;
+    const images = document.querySelectorAll('.gallery-card img');
+    images.forEach((image) => {
+        let appUrl = image.baseURI.endsWith('#') ?
+            image.baseURI.slice(0, -1) :
+            image.baseURI;
 
-    console.log(appUrl);
+        console.log(appUrl);
 
-    let src = image.getAttribute('src');
-    let id = image.getAttribute('id');
-    let url = `details.html?vehicleId=${id}`;
+        let src = image.getAttribute('src');
+        let id = image.getAttribute('id');
+        let url = `details.html?vehicleId=${id}`;
 
-    image.addEventListener('click', () => {
-      openModal(src, url);
+        image.addEventListener('click', () => {
+            openModal(src, url);
+        });
     });
-  });
 };
 
-const getVehicles = async () => {
-  const url = `${baseUrl}/list`;
+const getVehicles = async() => {
+    const url = `${baseUrl}/list`;
 
-  // Vi använder webbläsarens inbygga fetch api för att kommunicera med endpoints...
-  const response = await fetch(url);
+    // Vi använder webbläsarens inbygga fetch api för att kommunicera med endpoints...
+    const response = await fetch(url);
 
-  if (!response.ok) {
-    console.log('Oopps det blev fel här!');
-  }
+    if (!response.ok) {
+        console.log('Oopps det blev fel här!');
+    }
 
-  const vehicles = await response.json();
+    const vehicles = await response.json();
 
-  // alert.insertAdjacentHTML('beforeend', 'Vi hittade inga bilar');
-  vehicles.forEach((vehicle) => {
-    createHtml(vehicle);
-  });
+    // alert.insertAdjacentHTML('beforeend', 'Vi hittade inga bilar');
+    vehicles.forEach((vehicle) => {
+        createHtml(vehicle);
+    });
 
-  loadImages();
+    loadImages();
 };
 
 const openModal = (imageSrc, url) => {
-  const placeholder = modalDialog.querySelector('.modal-container');
-  placeholder.innerHTML = `<img src="${imageSrc}" alt="En bil"/>
+    const placeholder = modalDialog.querySelector('.modal-container');
+    placeholder.innerHTML = `<img src="${imageSrc}" alt="En bil"/>
   <a class="btn" href="${url}">Mer Info</a>`;
 
-  modalDialog.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+    modalDialog.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 };
 
 const closeModal = () => {
-  modalDialog.classList.add('hidden');
-  overlay.classList.add('hidden');
+    modalDialog.classList.add('hidden');
+    overlay.classList.add('hidden');
 };
 
 /* ------------------------------------------------------------
@@ -81,9 +81,9 @@ const closeModal = () => {
 //Hanterar att stänga vår dialogruta genom att lyssna efter klick på stäng knappen...
 closeModalButton.addEventListener('click', closeModal);
 document.addEventListener('keyup', (e) => {
-  if (e.key === 'Escape') {
-    if (!modalDialog.classList.contains('hidden')) closeModal();
-  }
+    if (e.key === 'Escape') {
+        if (!modalDialog.classList.contains('hidden')) closeModal();
+    }
 });
 
 getVehicles();
