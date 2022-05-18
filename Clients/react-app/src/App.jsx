@@ -8,7 +8,10 @@ import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 // Importera VehicleList som då representerar tabellen av bilar...
 import VehicleList from './components/Vehicles/VehicleList';
-
+// Importera AddVehicle komponenten...
+import AddVehicle from './components/Vehicles/AddVehicle';
+// Importera EditVehicle komponenten...
+import EditVehicle from './components/Vehicles/EditVehicles';
 // Importera huvud css filerna...
 import './utilities.css';
 import './styles.css';
@@ -27,6 +30,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/list' element={<VehicleList />} />
+          <Route path='/add' element={<AddVehicle />} />
+          <Route path='/edit/:id' element={<EditVehicle />} />
         </Routes>
       </main>
     </Router>

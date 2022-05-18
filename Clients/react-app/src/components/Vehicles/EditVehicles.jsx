@@ -1,16 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-function AddVehicle() {
+function EditVehicle() {
+  const params = useParams();
+  const [vehicleId, setVehicleId] = useState('');
   const [regNo, setRegNo] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [modelYear, setModelYear] = useState('');
   const [mileage, setMileage] = useState('');
-  const [imageUrl, setImageUrl] = useState(
-    'https://i.postimg.cc/Fsy2yyh8/car2.jpg'
-  );
+  const [imageUrl, setImageUrl] = useState('');
   const [value, setValue] = useState('');
   const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    fetchVehicle(params.id);
+  }, [params.id]);
+
+  const fetchVehicle = async (id) => {
+    const url = `${process.env.REACT_APP_BASEURL}/vehicles/${id}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      console.log('Hittade inga bilar, eller så gick något fel');
+    }
+
+    const vehicle = await response.json();
+    console.log(vehicle);
+    setVehicleId(vehicle.vehicleId);
+    setRegNo(vehicle.regNo);
+    setMake(vehicle.vehicleName.split(' ')[0]);
+    setModel(vehicle.vehicleName.split(' ')[1]);
+    setModelYear(vehicle.modelYear);
+    setMileage(vehicle.mileage);
+    setImageUrl(vehicle.imageUrl);
+    setValue(vehicle.value);
+    setDescription(vehicle.description);
+  };
+
+  const onHandleVehicleIdTextChanged = (e) => {
+    setVehicleId(e.target.value);
+  };
 
   const onHandleRegNoTextChanged = (e) => {
     setRegNo(e.target.value);
@@ -56,9 +87,9 @@ function AddVehicle() {
   };
 
   const saveVehicle = async (vehicle) => {
-    const url = `${process.env.REACT_APP_BASEURL}/vehicles`;
+    const url = `${process.env.REACT_APP_BASEURL}/vehicles/${vehicleId}`;
     const response = await fetch(url, {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -76,11 +107,18 @@ function AddVehicle() {
 
   return (
     <>
-      <h1 className='page-title'>Lägg till nytt fordon</h1>
+      <h1 className='page-title'>Uppdatera fordon</h1>
       <section className='form-container'>
         <h4>Fordons information</h4>
         <section className='form-wrapper'>
           <form className='form' onSubmit={handleSaveVehicle}>
+            <input
+              onChange={onHandleVehicleIdTextChanged}
+              value={vehicleId}
+              type='hidden'
+              id='vehicleId'
+              name='vehicleId'
+            />
             <div className='form-control'>
               <label htmlFor=''>Registreringsnummer</label>
               <input
@@ -173,4 +211,4 @@ function AddVehicle() {
   );
 }
 
-export default AddVehicle;
+export default EditVehicle;

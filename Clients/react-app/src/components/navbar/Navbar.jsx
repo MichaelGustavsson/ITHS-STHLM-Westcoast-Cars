@@ -13,6 +13,7 @@ function Navbar() {
         <li>
           <NavLink to='/'>Start sida</NavLink>
           <NavLink to='/list'>Lager fordon</NavLink>
+          <NavLink to='/add'>Lägg till fordon</NavLink>
         </li>
       </ul>
     </nav>

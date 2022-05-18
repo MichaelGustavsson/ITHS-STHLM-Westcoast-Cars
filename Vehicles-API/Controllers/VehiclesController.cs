@@ -1,3 +1,5 @@
+using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Vehicles_API.Interfaces;
 using Vehicles_API.Models;
@@ -19,16 +21,35 @@ namespace Vehicles_API.Controllers
       _vehicleRepo = vehicleRepo;
     }
 
-    // Skapa en endpoint som lyssnar efter url anrop api/v1/vehicles/list
+    //Skapa en endpoint som lyssnar efter url anrop api/v1/vehicles/list
     [HttpGet("list")]
+    [Authorize()]
     public async Task<ActionResult<List<VehicleViewModel>>> ListVehicles()
     {
       // Anropa metoden ListAllVehiclesAsync i vårt repository.
       return Ok(await _vehicleRepo.ListAllVehiclesAsync());
     }
 
+    // [HttpGet("list")]
+    // public async Task<ActionResult<ResponseViewModel>> ListVehicles()
+    // {
+    //   // Anropa metoden ListAllVehiclesAsync i vårt repository.
+    //   var data = await _vehicleRepo.ListAllVehiclesAsync();
+    //   var jsonString = JsonSerializer.Serialize(data);
+
+    //   var response = new ResponseViewModel{
+    //     Data = jsonString,
+    //     StatusCode = 200,
+    //     Count = data.Count,
+    //     PageNumber = 1,
+    //     PageSize = 50
+    //   };
+
+    //   return response;
+    // }
+
     // Skapa en endpoint som lyssnar efter url anrop api/v1/vehicles/id
-    [HttpGet("{id}")]
+    [HttpGet("{id}")]    
     public async Task<ActionResult<VehicleViewModel>> GetVehicleById(int id)
     {
       // Anropa metoden GetVehiclesAsync i vårt repository
