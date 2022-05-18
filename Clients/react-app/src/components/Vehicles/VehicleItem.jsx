@@ -15,9 +15,9 @@ function VehicleItem({ vehicle }) {
         </span>
       </td>
       <td>{vehicle.regNo}</td>
-      <td>{vehicle.make}</td>
-      <td>{vehicle.model}</td>
+      <td>{vehicle.vehicleName}</td>
       <td>{vehicle.modelYear}</td>
+      <td>{vehicle.mileage}</td>
       <td>
         <span onClick={onDeleteClickHandler}>
           <i className='fa-solid fa-trash-can delete'></i>

@@ -20,10 +20,7 @@ function VehicleList() {
     if (!response.ok) {
       console.log('Hittade inga bilar, eller så gick något fel');
     }
-
-    const data = await response.json();
-    console.log(data);
-    setVehicles(data);
+    setVehicles(await response.json());
   };
 
   return (
@@ -32,9 +29,9 @@ function VehicleList() {
         <tr>
           <th></th>
           <th>Regnummer</th>
-          <th>Tillverkare</th>
-          <th>Modell</th>
+          <th>Namn</th>
           <th>Modell År</th>
+          <th>Antal Km</th>
           <th></th>
         </tr>
       </thead>

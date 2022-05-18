@@ -1,3 +1,11 @@
+// Här importerar vi Reacts react-router-dom
+// Reacts navigerings motor...
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// Importera kompenenten Navbar...
+import Navbar from './components/navbar/Navbar';
+// Importera komponenten Home...
+import Home from './components/home/Home';
 // Importera VehicleList som då representerar tabellen av bilar...
 import VehicleList from './components/Vehicles/VehicleList';
 
@@ -13,10 +21,15 @@ import './styles.css';
 function App() {
   // Steg 2. returnera JSX(html med eventuella dynamiska skript...)
   return (
-    <main>
-      <h1 className='page-title'>Administrera bilar</h1>
-      <VehicleList />
-    </main>
+    <Router>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/list' element={<VehicleList />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
 
