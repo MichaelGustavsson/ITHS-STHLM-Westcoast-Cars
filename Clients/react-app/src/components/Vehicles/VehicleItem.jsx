@@ -1,8 +1,16 @@
 function VehicleItem({ vehicle }) {
+  const onEditClickHandler = () => {
+    console.log(`Ska uppdatera bilen ${vehicle.regNo}`);
+  };
+
+  const onDeleteClickHandler = () => {
+    console.log(`Kommer att ta bort bilen ${vehicle.regNo}`);
+  };
+
   return (
     <tr>
       <td>
-        <span>
+        <span onClick={onEditClickHandler}>
           <i className='fa-solid fa-pencil edit'></i>
         </span>
       </td>
@@ -10,7 +18,11 @@ function VehicleItem({ vehicle }) {
       <td>{vehicle.make}</td>
       <td>{vehicle.model}</td>
       <td>{vehicle.modelYear}</td>
-      <td></td>
+      <td>
+        <span onClick={onDeleteClickHandler}>
+          <i className='fa-solid fa-trash-can delete'></i>
+        </span>
+      </td>
     </tr>
   );
 }
