@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 
-function VehicleItem({ vehicle }) {
+function VehicleItem({ vehicle, handleDeleteVehicle }) {
   const navigate = useNavigate();
 
   const onEditClickHandler = () => {
     navigate(`/edit/${vehicle.vehicleId}`);
   };
 
-  const onDeleteClickHandler = () => {
-    console.log(`Kommer att ta bort bilen ${vehicle.regNo}`);
+  const onDeleteClickHandler = () => {    
+    handleDeleteVehicle(vehicle.vehicleId);
   };
 
   return (

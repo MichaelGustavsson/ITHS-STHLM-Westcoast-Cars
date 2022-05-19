@@ -14,13 +14,39 @@ function VehicleList() {
   }, []);
 
   const loadVehicles = async () => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    console.log(token);
+
     const url = `${process.env.REACT_APP_BASEURL}/vehicles/list`;
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    });
 
     if (!response.ok) {
       console.log('Hittade inga bilar, eller så gick något fel');
+    } else {
+      setVehicles(await response.json());
     }
-    setVehicles(await response.json());
+  };
+
+  const deleteVehicle = async (id) => {
+    console.log(`Tar bort bilen med id ${id}`);
+    const url = `${process.env.REACT_APP_BASEURL}/vehicles/${id}`;
+    const response = await fetch(url, {
+      method: 'DELETE',
+    });
+
+    console.log(response);
+
+    if (response.status >= 200 && response.status <= 299) {
+      console.log('Bilen borttagen');
+      loadVehicles();
+    } else {
+      console.log('Det gick fel någonstans');
+    }
   };
 
   return (
@@ -37,7 +63,11 @@ function VehicleList() {
       </thead>
       <tbody>
         {vehicles.map((vehicle) => (
-          <VehicleItem vehicle={vehicle} key={vehicle.vehicleId} />
+          <VehicleItem
+            vehicle={vehicle}
+            key={vehicle.vehicleId}
+            handleDeleteVehicle={deleteVehicle}
+          />
         ))}
       </tbody>
     </table>

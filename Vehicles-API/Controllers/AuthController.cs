@@ -10,7 +10,7 @@ using Vehicles_API.ViewModels.Authorization;
 namespace Vehicles_API.Controllers
 {
   [ApiController]
-  [Route("api/auth")]
+  [Route("api/v1/auth")]
   public class AuthController : ControllerBase
   {
     private readonly RoleManager<IdentityRole> _roleManager;

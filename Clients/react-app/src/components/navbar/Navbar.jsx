@@ -14,6 +14,7 @@ function Navbar() {
           <NavLink to='/'>Start sida</NavLink>
           <NavLink to='/list'>Lager fordon</NavLink>
           <NavLink to='/add'>Lägg till fordon</NavLink>
+          <NavLink to='/login'>Logga in</NavLink>
         </li>
       </ul>
     </nav>

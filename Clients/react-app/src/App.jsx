@@ -12,6 +12,9 @@ import VehicleList from './components/Vehicles/VehicleList';
 import AddVehicle from './components/Vehicles/AddVehicle';
 // Importera EditVehicle komponenten...
 import EditVehicle from './components/Vehicles/EditVehicles';
+// Importera Login komponenten...
+import Login from './components/authentication/Login';
+
 // Importera huvud css filerna...
 import './utilities.css';
 import './styles.css';
@@ -32,6 +35,7 @@ function App() {
           <Route path='/list' element={<VehicleList />} />
           <Route path='/add' element={<AddVehicle />} />
           <Route path='/edit/:id' element={<EditVehicle />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </main>
     </Router>

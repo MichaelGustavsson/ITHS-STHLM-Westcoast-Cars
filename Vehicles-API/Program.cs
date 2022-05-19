@@ -93,6 +93,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("WestcoastCors");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
